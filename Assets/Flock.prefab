@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5235121103512173989}
   - component: {fileID: 5235121103512173988}
   - component: {fileID: 5235121103512173995}
-  - component: {fileID: 5235121103512173994}
   - component: {fileID: 5235121103512173991}
+  - component: {fileID: 114941903910094220}
   m_Layer: 0
   m_Name: Flock
   m_TagString: Untagged
@@ -28,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5235121103512173993}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.52, z: 0}
   m_LocalScale: {x: 4.4078, y: 0.01, z: 4.4078}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &5235121103512173989
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -94,21 +94,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 32
+  m_Constraints: 84
   m_CollisionDetection: 0
---- !u!65 &5235121103512173994
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5235121103512173993}
-  m_Material: {fileID: 13400000, guid: 4c39c54712ad867468261d61ca7e9b7a, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0000001, y: 6, z: 1.0000002}
-  m_Center: {x: 0.000000059604645, y: 2, z: -0.00000008940697}
 --- !u!114 &5235121103512173991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +108,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b669b25471d744a80b4f00326adc28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 5235121103512173995}
-  Player: {fileID: 0}
+  Player: {fileID: 4502370572668295460, guid: cbbfa933dfbfe5e438fd004fa4cb8961, type: 3}
   Force: 500
+  DistanceTrigger: 10
+--- !u!114 &114941903910094220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5235121103512173993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3133893479d7f9c478892c8522a93458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sheepPrefab: {fileID: 4745551886119164622, guid: 7c1df194c8ab1a34ca0e28e8b57d33dd,
+    type: 3}
+  Size: 1
