@@ -7,18 +7,23 @@ public class FlockMovement : MonoBehaviour
   public Rigidbody rb;
   public GameObject Player;
   public float Force = 150;
-  private float DistanceTrigger = 5;
+  private float DistanceTrigger = 10;
+  private float Distance;
+  private Vector3 moveDirection;
   void Update()
   {
-    float Distance = Vector3.Distance(Player.transform.position, transform.position);
+    Distance = Vector3.Distance(Player.transform.position, transform.position);
     Vector3 Direction = Player.transform.position - transform.position;
-    Vector3 DirectionApplied = -Direction.normalized * (Force * Time.deltaTime);
-    Debug.Log(Distance);
-    Debug.Log(DistanceTrigger);
+    moveDirection = -Direction.normalized * (Force * Time.deltaTime);
+  }
+
+  void FixedUpdate()
+  {
     if (Distance < DistanceTrigger)
     {
-      rb.AddForce(DirectionApplied);
+      Debug.Log(DistanceTrigger / Distance);
+      rb.AddForce(moveDirection * (DistanceTrigger / Distance));
     }
-    Debug.DrawLine(transform.position, transform.position + DirectionApplied, Color.red);
+    Debug.DrawLine(transform.position, transform.position + moveDirection, Color.red);
   }
 }
