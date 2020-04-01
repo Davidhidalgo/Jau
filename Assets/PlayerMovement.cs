@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-  public Rigidbody rb;
   public float Force = 800f;
 
   void Update()
   {
+    Rigidbody rb = GetComponent<Rigidbody>();
     if (Input.GetKey("w"))
     {
       rb.AddForce(0, 0, Force * Time.deltaTime);

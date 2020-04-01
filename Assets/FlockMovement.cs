@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FlockMovement : MonoBehaviour
 {
-  public Rigidbody rb;
   public GameObject Player;
   public float Force = 150;
   private float DistanceTrigger = 10;
@@ -21,6 +20,7 @@ public class FlockMovement : MonoBehaviour
   {
     if (Distance < DistanceTrigger)
     {
+      Rigidbody rb = GetComponent<Rigidbody>();
       Debug.Log(DistanceTrigger / Distance);
       rb.AddForce(moveDirection * (DistanceTrigger / Distance));
     }
