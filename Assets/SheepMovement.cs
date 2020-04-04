@@ -14,9 +14,10 @@ public class SheepMovement : MonoBehaviour
     Distance = Vector3.Distance(MagnetPoint.transform.position, transform.position);
     Vector3 Direction = MagnetPoint.transform.position - transform.position;
     moveDirection = Direction.normalized * (Force * Time.deltaTime);
-    Quaternion newRotation = transform.rotation;
-    newRotation.y = MagnetPoint.transform.rotation.y;
-    transform.rotation = newRotation;
+    // Quaternion newRotation = transform.rotation;
+    // newRotation.y = MagnetPoint.transform.rotation.y;
+    // transform.rotation = newRotation;
+    // Debug.Log(newRotation);
   }
 
   void FixedUpdate()

@@ -17,6 +17,8 @@ public class FlockMovement : MonoBehaviour
     moveDirection.y = 0;
     Quaternion newRotation = Quaternion.LookRotation(moveDirection);
     transform.rotation = newRotation;
+    Gizmos.color = Color.blue;
+    Gizmos.DrawSphere(transform.position, 40);
   }
 
   void FixedUpdate()
