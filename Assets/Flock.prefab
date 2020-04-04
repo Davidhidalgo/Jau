@@ -87,7 +87,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4049247494527778244}
   - component: {fileID: 4049247494527778247}
-  - component: {fileID: 4049247494527778298}
   - component: {fileID: 4049247494527778245}
   m_Layer: 0
   m_Name: Flock
@@ -126,23 +125,6 @@ MonoBehaviour:
   Player: {fileID: 0}
   Force: 400
   DistanceTrigger: 6
---- !u!114 &4049247494527778298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4049247494527778246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3133893479d7f9c478892c8522a93458, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SheepPrefab: {fileID: 4745551886119164622, guid: 7c1df194c8ab1a34ca0e28e8b57d33dd,
-    type: 3}
-  SheepMagnetPoint: {fileID: 6988240661313093811, guid: 2a4e9a2e1302c174ca4b63cb65e877d3,
-    type: 3}
-  Size: 1
 --- !u!54 &4049247494527778245
 Rigidbody:
   m_ObjectHideFlags: 0

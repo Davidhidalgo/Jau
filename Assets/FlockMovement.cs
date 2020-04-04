@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class FlockMovement : MonoBehaviour
 {
-  public GameObject Player;
   public float Force = 150;
   public float DistanceTrigger = 10;
+  private GameObject Player;
   private float Distance;
   private Vector3 moveDirection;
   void Update()
@@ -29,5 +29,10 @@ public class FlockMovement : MonoBehaviour
       rb.AddForce(moveDirection * (DistanceTrigger / Distance));
     }
     Debug.DrawLine(transform.position, transform.position + moveDirection, Color.red);
+  }
+
+  public void SetPlayer(GameObject player)
+  {
+    Player = player;
   }
 }

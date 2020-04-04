@@ -7,7 +7,7 @@ public class SpawnSheeps : MonoBehaviour
   public GameObject SheepPrefab;
   public GameObject SheepMagnetPoint;
   public int Size = 1;
-  // Start is called before the first frame update
+
   void Start()
   {
     for (int i = 0; i < Size; i++)
