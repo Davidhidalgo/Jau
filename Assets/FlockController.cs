@@ -9,7 +9,7 @@ public class FlockController : MonoBehaviour
   private GameObject Player;
   private float Distance;
   private Vector3 moveDirection;
-  private List<GameObject> SheepsList;
+  private List<GameObject> MagnetPointsList;
 
   void Update()
   {
@@ -47,12 +47,18 @@ public class FlockController : MonoBehaviour
     Debug.DrawLine(transform.position, transform.position + moveDirection, Color.red);
   }
 
-  public void AsignSheeps(List<GameObject> Sheeps)
+  public void AsignMagnetPoints(List<GameObject> MagnetPoints)
   {
-    SheepsList = Sheeps;
-    foreach (GameObject Sheep in Sheeps)
+    MagnetPointsList = MagnetPoints;
+    foreach (GameObject MagnetPoint in MagnetPoints)
     {
-      Sheep.GetComponent<SheepMovement>().MagnetPoint.transform.parent = gameObject.transform;
+      MagnetPoint.transform.parent = gameObject.transform;
     }
+    ReorganizeMagnetPoints();
+  }
+
+  void ReorganizeMagnetPoints()
+  {
+
   }
 }

@@ -11,18 +11,19 @@ public class FlocksController : MonoBehaviour
   public GameObject Player;
   public int FlockSize = 1;
   private List<GameObject> FlocksList = new List<GameObject>();
-  private List<GameObject> SheepsList = new List<GameObject>();
+  private List<GameObject> SheepList = new List<GameObject>();
+  private List<GameObject> MagnetPointList = new List<GameObject>();
 
   void Start()
   {
     GameObject firstFlock = AddNewFlock();
     InitSheeps();
-    AsignSheepsToFlock(SheepsList, firstFlock);
+    AsignMagnetPointsToFlock(MagnetPointList, firstFlock);
   }
 
-  void AsignSheepsToFlock(List<GameObject> Sheeps, GameObject Flock)
+  void AsignMagnetPointsToFlock(List<GameObject> MagnetPoints, GameObject Flock)
   {
-    Flock.GetComponent<FlockController>().AsignSheeps(Sheeps);
+    Flock.GetComponent<FlockController>().AsignMagnetPoints(MagnetPoints);
   }
 
   GameObject AddNewFlock()
@@ -42,7 +43,8 @@ public class FlocksController : MonoBehaviour
       GameObject NewSheep = Instantiate(SheepPrefab, Position, Quaternion.identity);
       GameObject MagnetPoint = Instantiate(SheepMagnetPoint, transform.position, Quaternion.identity);
       NewSheep.GetComponent<SheepMovement>().SetMagnetPoint(MagnetPoint);
-      SheepsList.Add(NewSheep);
+      SheepList.Add(NewSheep);
+      MagnetPointList.Add(MagnetPoint);
     }
   }
 }
