@@ -3,7 +3,15 @@ guid: 50a3da20690f6304ba8e931d6a7ec3f7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - SheepPrefab: {fileID: 4745551886119164622, guid: 7c1df194c8ab1a34ca0e28e8b57d33dd,
+      type: 3}
+  - FlockPrefab: {fileID: 4049247494527778246, guid: bea90748b4b729c4884e9488c70bfeee,
+      type: 3}
+  - SheepMagnetPoint: {fileID: 6988240661313093811, guid: 2a4e9a2e1302c174ca4b63cb65e877d3,
+      type: 3}
+  - Player: {fileID: 4502370572668295460, guid: cbbfa933dfbfe5e438fd004fa4cb8961,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

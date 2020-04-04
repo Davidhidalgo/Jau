@@ -16,25 +16,26 @@ public class FlocksController : MonoBehaviour
 
   void Start()
   {
-    AddNewFlock();
-    InitSheeps();
+    GameObject firstFlock = AddNewFlock();
+    InitSheeps(firstFlock);
   }
 
-  void AddNewFlock()
+  GameObject AddNewFlock()
   {
     GameObject NewFlock = Instantiate(FlockPrefab, transform.position, Quaternion.identity, gameObject.transform);
-    NewFlock.GetComponent<FlockMovement>().SetPlayer(Player);
+    NewFlock.GetComponent<FlockController>().SetPlayer(Player);
     Flocks.Add(NewFlock);
+
+    return NewFlock;
   }
 
-  void InitSheeps()
+  void InitSheeps(GameObject Flock)
   {
-    GameObject InitialFlock = Flocks[0];
     for (int i = 0; i < FlockSize; i++)
     {
       Vector3 Position = new Vector3(transform.position.x, 1, transform.position.z);
       GameObject NewSheep = Instantiate(SheepPrefab, Position, Quaternion.identity);
-      GameObject MagnetPoint = Instantiate(SheepMagnetPoint, transform.position, Quaternion.identity, InitialFlock.transform);
+      GameObject MagnetPoint = Instantiate(SheepMagnetPoint, transform.position, Quaternion.identity, Flock.transform);
       NewSheep.GetComponent<SheepMovement>().SetMagnetPoint(MagnetPoint);
       Sheeps.Add(NewSheep);
     }
