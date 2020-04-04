@@ -290,8 +290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 534152595}
-  Force: 500
-  DistanceTrigger: 5
+  Force: 400
+  DistanceTrigger: 6
 --- !u!4 &442106078
 Transform:
   m_ObjectHideFlags: 0
