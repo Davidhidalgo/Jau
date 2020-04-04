@@ -9,6 +9,8 @@ public class FlockController : MonoBehaviour
   private GameObject Player;
   private float Distance;
   private Vector3 moveDirection;
+  private List<GameObject> SheepsList;
+
   void Update()
   {
     CalcRepelPlayer();
@@ -43,5 +45,14 @@ public class FlockController : MonoBehaviour
       rb.AddForce(moveDirection * (DistanceTrigger / Distance));
     }
     Debug.DrawLine(transform.position, transform.position + moveDirection, Color.red);
+  }
+
+  public void AsignSheeps(List<GameObject> Sheeps)
+  {
+    SheepsList = Sheeps;
+    foreach (GameObject Sheep in Sheeps)
+    {
+      Sheep.GetComponent<SheepMovement>().MagnetPoint.transform.parent = gameObject.transform;
+    }
   }
 }

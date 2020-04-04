@@ -6,7 +6,7 @@ public class SheepMovement : MonoBehaviour
 {
   public float Force = 200;
   public GameObject Player;
-  private GameObject MagnetPoint;
+  public GameObject MagnetPoint;
   private float Distance;
   private Vector3 moveDirection;
 
